@@ -16,12 +16,18 @@
      http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
      http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.3.xsd"
      >
-     <context:property-placeholder location="classpath:dbcp.properties"/>
+     <context:property-placeholder location="classpath:dbcp.properties,classpath:mysql.properties"/>
      <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
      	<property name="driverClassName" value="${dbcp.driverClassName}"/>
      	<property name="url" value="${dbcp.url}"/>
      	<property name="username" value="${dbcp.username}"/>
      	<property name="password" value="${dbcp.password}"/>
+     </bean>
+     <bean id="dataSourcemysql" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+     	<property name="driverClassName" value="${mysql.driver}"/>
+     	<property name="url" value="${mysql.url}"/>
+     	<property name="username" value="${mysql.user}"/>
+     	<property name="password" value="${mysql.password}"/>
      </bean>
      <!-- 配置事务，并让注解生效 -->
      <tx:annotation-driven/>

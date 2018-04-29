@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.yusys.dao.NewsCommentMapper">
+  	<select id="getAllCommentByNewsDetailId" parameterType="NewsDetail" resultType="NewsComment">
+  		select * from news_comment where newsid=#{id}
+  	</select>
+  	<insert id="addComment" parameterType="NewsComment">
+	  	insert into news_comment(newsid,content,author,createdate) values(#{newsDetail.id},
+	  	#{content},#{author},#{createdate,jdbcType=DATE})
+  	</insert>
+  	<delete id="deleteComment" parameterType="NewsDetail">
+  		delete from news_comment where newsid=#{id}
+  	</delete>
+  </mapper>
