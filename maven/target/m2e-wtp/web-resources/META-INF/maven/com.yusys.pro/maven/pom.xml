@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.yusys.pro</groupId>
+  <artifactId>maven</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>maven Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.0.1</version>
+</dependency>
+  </dependencies>
+  <build>
+    <plugins> <plugin> <!-- 项目报红叉，下面子文件没有一个报红叉原因是缺少插件的配置项 -->
+<artifactId>maven-compiler-plugin</artifactId> <configuration> <target>1.7</target> <source>1.7</source> <encoding>UTF-8</encoding> </configuration> </plugin>
+ 
+ </plugins> 
+    <finalName>maven</finalName>
+  </build>
+</project>
