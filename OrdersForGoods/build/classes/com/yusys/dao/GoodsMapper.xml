@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.yusys.dao.GoodsMapper">
+  	<select id="getGoodsByDistric" parameterType="int" resultType="Goods">
+  	 select * from goods where goodsDistric = #{distric}
+  	</select>
+  	<select id="getById" parameterType="int" resultType="Goods">
+  	 select * from goods where id=#{id}
+  	</select>
+  <select id="findAll" resultType="Goods" parameterType="Goods">
+  	select * from goods order by id desc
+  </select>
+  <update id="modify" parameterType="Goods" >
+  	update goods set goodsName=#{goodsName},billStatus=#{billStatus},goodsPrice=#{goodsPrice},
+  	goodsCount=#{goodsCount},creationTime=#{creationTime} where id=#{id}
+  </update>
+  <insert id="add" parameterType="Goods">
+   insert into goods(goodsName,billStatus,goodsDistric,goodsPrice,goodsCount,creationTime) 
+   values(#{goodsName},#{billStatus},#{goodsDistric},#{goodsPrice},#{goodsCount},#{creationTime})
+  </insert>
+  <delete id="delete" parameterType="int">
+  delete from goods where id = #{id}
+  </delete>
+  </mapper>
+  
+  

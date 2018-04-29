@@ -1,0 +1,7 @@
+1、配置数据源，要看清楚采用哪一个数据源，不同的数据源需要不同的jar包，同时不同数据源的属性名或许不同，需要看清楚
+属性名,属性名的书写要与相应数据源相一致。
+2、SSM框架整合主要是spring springMVC和mybatis三者的整合，其思路是：spring整合mybatis，而springMVC
+则相对队里，spring配置文件接管mybatis配置文件中数据源属性文件、数据源、事务，sqlSessionFactory的配置，这其中
+sqlSessionFactoryBean中的属性configLocation加载mybatis的配置文件从而将mybatis整合起来；
+springMVC配置文件启动整个项目的注解，使其生效，spring配置文件启动事务注解；
+web.xml配置的监听器加载spring的配置文件ApplicationContext.xml,同样方法配置log4j的属性文件，配置的servlet与springMVC结合起来。
