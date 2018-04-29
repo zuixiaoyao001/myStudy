@@ -38,7 +38,7 @@
      </bean>
      <!-- mapper 接口所在包名，spring自动查找下面mapper.xml并生产相应实例，让接口和xml相关联 -->
      <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-     <property name="basePackage" value="com.yusys.dao"/>
+     <property name="basePackage" value="com.topband.dao"/>
      </bean>
      
 </beans>

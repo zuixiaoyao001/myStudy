@@ -180,7 +180,7 @@
   
  <build>
 <plugins> <plugin> <!-- 项目报红叉，下面子文件没有一个报红叉原因是缺少插件的配置项 ,jre不能修改成为1.7，update后即又重回1.5的原因-->
-<artifactId>maven-compiler-plugin</artifactId> <configuration> <target>1.7</target> <source>1.7</source> <encoding>UTF-8</encoding> </configuration> 
+<artifactId>maven-compiler-plugin</artifactId> <configuration> <target>1.8</target> <source>1.8</source> <encoding>UTF-8</encoding> </configuration> 
 </plugin>
 <!-- <plugin>
 <groupId>org.mortbay.jetty</groupId>
